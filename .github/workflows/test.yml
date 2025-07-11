@@ -1,0 +1,22 @@
+name: Install Flatpak
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build - ${{ matrix.config.os }}
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - os: ubuntu-latest
+            name: "Ubuntu Latest"
+    steps:
+      - name: Install Flatpak
+        shell: bash
+        run:   |
+          sudo apt upade
+          sudo apt install flatpak flatpak-builder
