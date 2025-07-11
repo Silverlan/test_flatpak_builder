@@ -18,5 +18,5 @@ jobs:
       - name: Install Flatpak
         shell: bash
         run:   |
-          sudo apt upade
+          sudo apt update
           sudo apt install flatpak flatpak-builder
